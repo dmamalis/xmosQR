@@ -7,11 +7,20 @@
 #include "debug_print.h"
 #include "analog_tile_support.h"
 
-in buffered port:1 p_uart_rx = XS1_PORT_1A;
+out port gpio0 = XS1_PORT_1J;
+out port gpio1 = XS1_PORT_1K;
+out port gpio2 = XS1_PORT_1M;
+out port gpio3 = XS1_PORT_1N;
+out port gpio4 = XS1_PORT_1L;
+out port gpio5 = XS1_PORT_1I;
+out port gpio6 = XS1_PORT_1O;
+out port gpio7 = XS1_PORT_1P;
 
-out port p_uart_tx = XS1_PORT_1A;
+in buffered port:1 p_uart_rx = XS1_PORT_1F;
 
-r_i2c i2c_if = {on tile[0]:"<assign port here>", on tile[0]:"<assign port here>", 1000};
+out port p_uart_tx = XS1_PORT_1H;
+
+r_i2c i2c_if = {on tile[0]:XS1_PORT_1G, on tile[0]:XS1_PORT_1E, 1000};
 
 int main() {
     chan c_rx_uart;
